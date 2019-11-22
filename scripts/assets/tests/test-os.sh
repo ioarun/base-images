@@ -22,8 +22,10 @@ os_version="$2"
 
 function check_os_version {
     source /etc/os-release
-    if [ "$ID" != "$os" ] ; then
-        echo "Incorrect OS!"; exit 1
+    if [ "$ID" != "raspbian" ] ; then
+        if [ "$ID" != "$os" ] ; then
+            echo "Incorrect OS!"; exit 1
+        fi
     fi
 
     case "$os" in
